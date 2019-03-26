@@ -2,7 +2,7 @@
 var WebSocketServer = require('ws').Server;
  
 //creating a websocket server at port 9090 
-var wss = new WebSocketServer({port: 9090}); 
+var wss = new WebSocketServer({host:"0.0.0.0",port: 8000}); 
 
 //all connected to the server users 
 var users = {};
