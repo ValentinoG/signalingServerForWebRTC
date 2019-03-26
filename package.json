@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ValentinoG/signalingServerForWebRTC/issues"
   },
-  "homepage": "https://github.com/ValentinoG/signalingServerForWebRTC#readme"
+  "homepage": "https://github.com/ValentinoG/signalingServerForWebRTC#readme",
+  "dependencies": {
+    "ws": "^6.2.0"
+  }
 }
