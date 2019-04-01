@@ -142,6 +142,24 @@ wss.on('connection', function(connection) {
          } 
       } 
    });  
+   connection.on("error", function() { 
+   
+      if(connection.name) { 
+      delete users[connection.name]; 
+      
+         if(connection.otherName) { 
+            console.log("Disconnecting from ", connection.otherName);
+            var conn = users[connection.otherName]; 
+            conn.otherName = null;  
+            
+            if(conn != null) { 
+               sendTo(conn, { 
+                  type: "leave" 
+               });
+            }  
+         } 
+      } 
+   });  
    
    //connection.send("Hello world"); 
    
